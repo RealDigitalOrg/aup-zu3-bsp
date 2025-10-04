@@ -1,3 +1,10 @@
+## Input LVDS clock
+
+#set_property PACKAGE_PIN D6  [get_ports { SYS_CLK_100M_C_N }]; 
+#set_property PACKAGE_PIN D7  [get_ports { SYS_CLK_100M_C_P }];
+#set_property IOSTANDARD LVDS [get_ports SYS_CLK_100M_C_*] 
+#create_clock -period 10.000 -name PL_CLK [get_ports SYS_CLK_100M_C_P]
+
 ## White LEDS (8 outputs)
 
 set_property PACKAGE_PIN AF5 [get_ports {PL_USER_LED[0]}]
